@@ -1,0 +1,134 @@
+{
+  "brand": {
+    "name": "ملاعبك",
+    "tagline": "احجز ملعبك القادم في ثوانٍ"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "myBookings": "حجوزاتي",
+    "ownerDashboard": "لوحة المالك",
+    "adminDashboard": "لوحة الإدارة",
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "language": "English"
+  },
+  "home": {
+    "heroTitle": "اعثر على أقرب ملعب واحجزه الآن",
+    "heroSubtitle": "تصفح مئات الملاعب في السعودية، وقارن الأسعار، واحجز بضغطة واحدة.",
+    "searchPlaceholder": "ابحث باسم الملعب أو المنشأة أو الحي",
+    "useMyLocation": "استخدام موقعي",
+    "locationDenied": "تعذّر الوصول للموقع، يمكنك تصفح كل الملاعب أدناه",
+    "viewList": "قائمة",
+    "viewMap": "خريطة",
+    "resultsCount": "{count, plural, =0 {لا توجد ملاعب مطابقة} one {ملعب واحد متاح} other {# ملعب متاح}}",
+    "distanceAway": "على بعد {distance} كم",
+    "noResults": "لم نجد ملاعب تطابق بحثك، جرّب تعديل الفلاتر"
+  },
+  "filters": {
+    "title": "الفلاتر",
+    "size": "حجم الملعب",
+    "sizeAny": "كل الأحجام",
+    "indoor": "التغطية",
+    "indoorAny": "الكل",
+    "indoorOnly": "مغطى",
+    "outdoorOnly": "غير مغطى",
+    "availableToday": "متاح اليوم",
+    "clear": "مسح الفلاتر"
+  },
+  "pitch": {
+    "perHour": "﷼{price} / الساعة",
+    "capacity": "من {min} إلى {max} لاعبًا",
+    "amenities": "المرافق",
+    "reviews": "التقييمات",
+    "noReviews": "لا توجد تقييمات بعد",
+    "writeReview": "أضف تقييمك",
+    "ratingLabel": "تقييمك",
+    "commentPlaceholder": "شاركنا تجربتك في هذا الملعب",
+    "submitReview": "إرسال التقييم",
+    "bookNow": "احجز الآن",
+    "selectDate": "اختر التاريخ",
+    "availableSlots": "الأوقات المتاحة",
+    "noSlotsToday": "لا توجد أوقات متاحة في هذا اليوم",
+    "slotHeld": "الفترة محجوزة مؤقتًا لك لمدة 10 دقائق لإتمام الحجز",
+    "playerCount": "عدد اللاعبين",
+    "depositRequired": "هذا الحجز يبعد أكثر من 5 أيام، يتطلب دفع عربون ﷼{amount} لتأكيد الحجز",
+    "depositOptional": "يمكنك دفع عربون ﷼{amount} اختياريًا لضمان الحجز، أو التأكيد بدونه",
+    "payAtVenue": "الدفع الكامل في الملعب عند الحضور",
+    "confirmBooking": "تأكيد الحجز",
+    "payDeposit": "دفع العربون وتأكيد الحجز",
+    "loginToBook": "سجّل الدخول لتأكيد الحجز",
+    "bookingConfirmed": "تم تأكيد حجزك بنجاح!",
+    "bookingConfirmedBody": "أرسلنا تفاصيل الحجز إلى بريدك الإلكتروني.",
+    "cancelPolicy": "لا يمكن إلغاء الحجز ذاتيًا، تواصل مع الملعب مباشرة لأي تعديل."
+  },
+  "auth": {
+    "loginTitle": "تسجيل الدخول",
+    "signupTitle": "إنشاء حساب جديد",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الجوال",
+    "password": "كلمة المرور",
+    "submitSignup": "إنشاء الحساب",
+    "submitLogin": "دخول",
+    "haveAccount": "لديك حساب بالفعل؟",
+    "noAccount": "ليس لديك حساب؟",
+    "otpTitle": "تأكيد البريد الإلكتروني",
+    "otpBody": "أدخل رمز التأكيد المرسل إلى {email}",
+    "otpCode": "رمز التأكيد",
+    "otpSubmit": "تأكيد",
+    "otpResend": "إعادة إرسال الرمز"
+  },
+  "booking": {
+    "title": "حجوزاتي",
+    "empty": "لا توجد حجوزات بعد، ابدأ بتصفح الملاعب",
+    "status": {
+      "confirmed": "مؤكد",
+      "completed": "مكتمل",
+      "cancelled": "ملغى"
+    },
+    "deposit": {
+      "not_required": "بدون عربون",
+      "pending": "بانتظار دفع العربون",
+      "paid": "تم دفع العربون",
+      "failed": "فشل الدفع"
+    }
+  },
+  "dashboard": {
+    "owner": {
+      "title": "لوحة المالك",
+      "venues": "منشآتي",
+      "calendar": "تقويم الحجوزات",
+      "pitchSettings": "إعدادات الملعب",
+      "priceLabel": "السعر لكل ساعة (﷼)",
+      "depositRequiredLabel": "العربون إلزامي",
+      "depositAmountLabel": "مبلغ العربون (﷼)",
+      "weeklyHours": "الأوقات الأسبوعية",
+      "addException": "إضافة استثناء / إغلاق",
+      "conflictWarning": "تنبيه: هذه الفترة محجوزة من قبل مستخدم، يرجى التواصل معه مباشرة قبل الإغلاق"
+    },
+    "admin": {
+      "title": "لوحة الإدارة",
+      "venues": "المنشآت",
+      "addVenue": "إضافة منشأة",
+      "addPitch": "إضافة ملعب",
+      "people": "المشرفون والملاك",
+      "assignRole": "إسناد دور",
+      "roleLabel": "الدور",
+      "uploadImages": "رفع الصور"
+    }
+  },
+  "footer": {
+    "rights": "جميع الحقوق محفوظة",
+    "ksaOnly": "متوفر حاليًا داخل المملكة العربية السعودية فقط"
+  },
+  "common": {
+    "loading": "جارٍ التحميل...",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "back": "رجوع",
+    "sar": "ريال"
+  }
+}

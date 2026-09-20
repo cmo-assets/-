@@ -1,0 +1,134 @@
+{
+  "brand": {
+    "name": "Mala3bak",
+    "tagline": "Book your next pitch in seconds"
+  },
+  "nav": {
+    "home": "Home",
+    "myBookings": "My bookings",
+    "ownerDashboard": "Owner dashboard",
+    "adminDashboard": "Admin dashboard",
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "language": "العربية"
+  },
+  "home": {
+    "heroTitle": "Find and book the nearest pitch",
+    "heroSubtitle": "Browse hundreds of pitches across Saudi Arabia, compare prices, and book in one click.",
+    "searchPlaceholder": "Search by pitch, venue, or neighborhood",
+    "useMyLocation": "Use my location",
+    "locationDenied": "Couldn't access your location — browse all pitches below",
+    "viewList": "List",
+    "viewMap": "Map",
+    "resultsCount": "{count, plural, =0 {No pitches match} one {1 pitch available} other {# pitches available}}",
+    "distanceAway": "{distance} km away",
+    "noResults": "No pitches match your search — try adjusting the filters"
+  },
+  "filters": {
+    "title": "Filters",
+    "size": "Pitch size",
+    "sizeAny": "Any size",
+    "indoor": "Coverage",
+    "indoorAny": "Any",
+    "indoorOnly": "Indoor",
+    "outdoorOnly": "Outdoor",
+    "availableToday": "Available today",
+    "clear": "Clear filters"
+  },
+  "pitch": {
+    "perHour": "SAR {price} / hour",
+    "capacity": "{min} to {max} players",
+    "amenities": "Amenities",
+    "reviews": "Reviews",
+    "noReviews": "No reviews yet",
+    "writeReview": "Write a review",
+    "ratingLabel": "Your rating",
+    "commentPlaceholder": "Share your experience at this pitch",
+    "submitReview": "Submit review",
+    "bookNow": "Book now",
+    "selectDate": "Select a date",
+    "availableSlots": "Available time slots",
+    "noSlotsToday": "No slots available on this day",
+    "slotHeld": "This slot is held for you for 10 minutes to complete the booking",
+    "playerCount": "Number of players",
+    "depositRequired": "This booking is more than 5 days out and requires a SAR {amount} deposit to confirm",
+    "depositOptional": "You can optionally pay a SAR {amount} deposit to secure the slot, or confirm without one",
+    "payAtVenue": "Pay the full amount at the venue on arrival",
+    "confirmBooking": "Confirm booking",
+    "payDeposit": "Pay deposit & confirm booking",
+    "loginToBook": "Log in to confirm your booking",
+    "bookingConfirmed": "Your booking is confirmed!",
+    "bookingConfirmedBody": "We've sent the booking details to your email.",
+    "cancelPolicy": "Bookings can't be cancelled from the app — contact the venue directly for any changes."
+  },
+  "auth": {
+    "loginTitle": "Log in",
+    "signupTitle": "Create an account",
+    "fullName": "Full name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "password": "Password",
+    "submitSignup": "Create account",
+    "submitLogin": "Log in",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "otpTitle": "Verify your email",
+    "otpBody": "Enter the verification code sent to {email}",
+    "otpCode": "Verification code",
+    "otpSubmit": "Verify",
+    "otpResend": "Resend code"
+  },
+  "booking": {
+    "title": "My bookings",
+    "empty": "No bookings yet — start browsing pitches",
+    "status": {
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "deposit": {
+      "not_required": "No deposit",
+      "pending": "Deposit pending",
+      "paid": "Deposit paid",
+      "failed": "Payment failed"
+    }
+  },
+  "dashboard": {
+    "owner": {
+      "title": "Owner dashboard",
+      "venues": "My venues",
+      "calendar": "Bookings calendar",
+      "pitchSettings": "Pitch settings",
+      "priceLabel": "Price per hour (SAR)",
+      "depositRequiredLabel": "Deposit required",
+      "depositAmountLabel": "Deposit amount (SAR)",
+      "weeklyHours": "Weekly hours",
+      "addException": "Add exception / closure",
+      "conflictWarning": "Warning: this slot is already booked — contact the customer directly before closing it"
+    },
+    "admin": {
+      "title": "Admin dashboard",
+      "venues": "Venues",
+      "addVenue": "Add venue",
+      "addPitch": "Add pitch",
+      "people": "Admins & owners",
+      "assignRole": "Assign role",
+      "roleLabel": "Role",
+      "uploadImages": "Upload images"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "ksaOnly": "Currently available within Saudi Arabia only"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "sar": "SAR"
+  }
+}
