@@ -7,7 +7,7 @@ few clicks. Bilingual (Arabic default / English), RTL-aware.
 ## Stack
 
 - **Next.js 16** (App Router, TypeScript) + Tailwind v4
-- **Supabase** — Postgres, Auth (email + password + OTP), Storage, Row Level Security
+- **Supabase** — Postgres, Auth (email + password + email confirmation link), Storage, Row Level Security
 - **next-intl** for `ar`/`en` routing and translations
 - **Google Maps JS API** for the map view
 - **Tap Payments** for deposit charges (mada / Apple Pay)
@@ -34,15 +34,30 @@ role management, and owner dashboards need a live Supabase project.
    `venue_public`/`pitch_public`/`pitch_rating_public` views, and all Row
    Level Security policies — including the ones that keep admin/owner
    identities out of anything a visitor can query.
-3. In **Authentication → Email Templates → Confirm signup**, switch the
-   template to show `{{ .Token }}` (a 6-digit code) instead of the magic
-   link, so `/verify-otp` has something to verify.
-4. Copy the project URL and anon key into `.env.local`. The service-role key
-   is only needed for the admin dashboard's "assign role" and "list users"
-   actions.
-5. Promote your first account to `admin` directly in the `profiles` table —
+3. Copy the project URL and both API keys into `.env.local` (Project
+   Settings → API — recent projects show a `publishable`/`secret` key pair
+   instead of the older JWT-style `anon`/`service_role`; either works as a
+   drop-in). The secret/service-role key is only needed for the admin
+   dashboard's "assign role" and "list users" actions.
+4. Promote your first account to `admin` directly in the `profiles` table —
    every other admin/owner account is created from the admin dashboard from
    there on (self-signup only ever produces `player` accounts, by design).
+
+Signup confirmation uses Supabase's **default** "Confirm signup" email
+template as-is (a link, not a typed-in code) — editing that template's
+subject/body requires custom SMTP on Supabase's free tier, so we deliberately
+don't depend on it. `/auth/callback` (outside the `[locale]` tree, since
+Supabase's redirect target can't know the visitor's locale yet) exchanges
+whatever the confirmation link hands back — either a PKCE `?code=` (the
+normal path: `createBrowserClient` always uses the PKCE flow, so this is
+what a real signup produces) or, defensively, session tokens in the URL
+hash — then sends the browser home signed in. The one inherent limitation
+here is PKCE's own: the confirmation link only carries a session if it's
+opened in the *same browser* that ran `signUp()`, since the verifier it's
+checked against lives in that browser's storage — opening the email on a
+different device won't complete the sign-in. That's a known trade-off of
+Supabase's SSR auth package, not something this app's code can route
+around.
 
 ### Optional integrations
 
@@ -82,7 +97,3 @@ messages/{ar,en}.json        Translations
   or offer one optionally otherwise. Everything else is pay-at-venue.
 - **Cancellation**: intentionally not self-service — the UI always points
   players to contact the venue directly, matching the product decision.
-- **No dedicated design system for the admin/owner dashboards**: those
-  screens use plain English labels/forms (Tailwind + the same UI kit) rather
-  than full translation coverage, since they're internal tooling rather
-  than the bilingual public-facing surface.

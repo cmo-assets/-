@@ -73,11 +73,8 @@
     "submitLogin": "دخول",
     "haveAccount": "لديك حساب بالفعل؟",
     "noAccount": "ليس لديك حساب؟",
-    "otpTitle": "تأكيد البريد الإلكتروني",
-    "otpBody": "أدخل رمز التأكيد المرسل إلى {email}",
-    "otpCode": "رمز التأكيد",
-    "otpSubmit": "تأكيد",
-    "otpResend": "إعادة إرسال الرمز"
+    "checkEmailTitle": "تحقّق من بريدك الإلكتروني",
+    "checkEmailBody": "أرسلنا رابط تأكيد إلى {email}. افتح بريدك واضغط الرابط لتفعيل حسابك."
   },
   "booking": {
     "title": "حجوزاتي",

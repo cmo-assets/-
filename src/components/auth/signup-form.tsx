@@ -2,23 +2,22 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { useRouter } from "@/i18n/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2, MailCheck } from "lucide-react";
 
 export function SignupForm() {
   const t = useTranslations("auth");
-  const router = useRouter();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [sentTo, setSentTo] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -35,7 +34,10 @@ export function SignupForm() {
     const { error: signUpError } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { full_name: fullName, phone } },
+      options: {
+        data: { full_name: fullName, phone },
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
+      },
     });
 
     setLoading(false);
@@ -43,7 +45,17 @@ export function SignupForm() {
       setError(signUpError.message);
       return;
     }
-    router.push(`/verify-otp?email=${encodeURIComponent(email)}`);
+    setSentTo(email);
+  }
+
+  if (sentTo) {
+    return (
+      <div className="space-y-3 rounded-xl bg-primary-50 p-4 text-center">
+        <MailCheck className="mx-auto text-primary-600" size={28} />
+        <p className="font-medium text-primary-800">{t("checkEmailTitle")}</p>
+        <p className="text-sm text-primary-700">{t("checkEmailBody", { email: sentTo })}</p>
+      </div>
+    );
   }
 
   return (

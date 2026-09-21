@@ -11,5 +11,7 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  // /auth/* is Supabase's own email-confirmation callback route — it isn't
+  // locale-prefixed and manages its own session exchange.
+  matcher: ["/((?!api|auth|_next|_vercel|.*\\..*).*)"],
 };
