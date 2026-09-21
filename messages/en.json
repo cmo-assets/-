@@ -135,7 +135,11 @@
       "rolePlayer": "Player",
       "roleOwner": "Venue owner",
       "roleAdmin": "Admin",
-      "noVenuePitches": "No pitches at this venue yet"
+      "noVenuePitches": "No pitches at this venue yet",
+      "managePhotos": "Manage photos",
+      "photosTitle": "Pitch photos",
+      "noImages": "No photos yet",
+      "addPhotos": "Add photos"
     }
   },
   "footer": {

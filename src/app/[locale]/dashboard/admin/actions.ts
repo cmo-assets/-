@@ -27,6 +27,23 @@ export async function createVenue(formData: FormData) {
   revalidatePath("/dashboard/admin");
 }
 
+async function uploadPitchImages(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  pitchId: string,
+  images: File[],
+  startingSortOrder: number,
+) {
+  for (const [index, image] of images.entries()) {
+    const path = `${pitchId}/${Date.now()}-${index}-${image.name}`;
+    const { error } = await supabase.storage.from("pitch-images").upload(path, image);
+    if (!error) {
+      await supabase
+        .from("pitch_images")
+        .insert({ pitch_id: pitchId, storage_path: path, sort_order: startingSortOrder + index });
+    }
+  }
+}
+
 export async function createPitch(venueId: string, formData: FormData) {
   const supabase = await createClient();
 
@@ -52,16 +69,35 @@ export async function createPitch(venueId: string, formData: FormData) {
 
   const images = formData.getAll("images").filter((f): f is File => f instanceof File && f.size > 0);
   if (pitch && images.length > 0) {
-    for (const [index, image] of images.entries()) {
-      const path = `${pitch.id}/${Date.now()}-${index}-${image.name}`;
-      const { error } = await supabase.storage.from("pitch-images").upload(path, image);
-      if (!error) {
-        await supabase.from("pitch_images").insert({ pitch_id: pitch.id, storage_path: path, sort_order: index });
-      }
-    }
+    await uploadPitchImages(supabase, pitch.id, images, 0);
   }
 
   revalidatePath(`/dashboard/admin/venues/${venueId}`);
+}
+
+export async function addPitchImages(pitchId: string, formData: FormData) {
+  const supabase = await createClient();
+
+  const images = formData.getAll("images").filter((f): f is File => f instanceof File && f.size > 0);
+  if (images.length === 0) return;
+
+  const { count } = await supabase
+    .from("pitch_images")
+    .select("id", { count: "exact", head: true })
+    .eq("pitch_id", pitchId);
+
+  await uploadPitchImages(supabase, pitchId, images, count ?? 0);
+
+  revalidatePath(`/dashboard/admin/pitches/${pitchId}`);
+}
+
+export async function deletePitchImage(pitchId: string, imageId: string, storagePath: string) {
+  const supabase = await createClient();
+
+  await supabase.storage.from("pitch-images").remove([storagePath]);
+  await supabase.from("pitch_images").delete().eq("id", imageId);
+
+  revalidatePath(`/dashboard/admin/pitches/${pitchId}`);
 }
 
 export async function assignRole(formData: FormData) {

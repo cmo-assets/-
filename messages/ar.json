@@ -135,7 +135,11 @@
       "rolePlayer": "لاعب",
       "roleOwner": "مالك ملعب",
       "roleAdmin": "مشرف",
-      "noVenuePitches": "لا توجد ملاعب في هذه المنشأة بعد"
+      "noVenuePitches": "لا توجد ملاعب في هذه المنشأة بعد",
+      "managePhotos": "إدارة الصور",
+      "photosTitle": "صور الملعب",
+      "noImages": "لا توجد صور بعد",
+      "addPhotos": "إضافة صور"
     }
   },
   "footer": {
