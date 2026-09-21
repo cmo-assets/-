@@ -53,8 +53,8 @@ export default async function AdminDashboardPage({
           <Input name="city" placeholder="المدينة / City" required />
           <Input name="neighborhood" placeholder="الحي / Neighborhood" />
           <Input name="address" placeholder="العنوان / Address" className="col-span-2" />
-          <Input name="lat" type="number" step="any" placeholder="Latitude" required />
-          <Input name="lng" type="number" step="any" placeholder="Longitude" required />
+          <Input name="lat" type="number" step="any" placeholder="خط العرض / Latitude" required />
+          <Input name="lng" type="number" step="any" placeholder="خط الطول / Longitude" required />
           <textarea
             name="description_ar"
             placeholder="الوصف بالعربية"
@@ -105,11 +105,11 @@ export default async function AdminDashboardPage({
                 {t("roleLabel")}
               </Label>
               <Select id={`role-${p.id}`} name="role" defaultValue={p.role} className="w-32">
-                <option value="player">player</option>
-                <option value="owner">owner</option>
-                <option value="admin">admin</option>
+                <option value="player">{t("rolePlayer")}</option>
+                <option value="owner">{t("roleOwner")}</option>
+                <option value="admin">{t("roleAdmin")}</option>
               </Select>
-              <Input name="venue_id" placeholder="venue id (if owner)" className="w-44" />
+              <Input name="venue_id" placeholder={t("venueIdPlaceholder")} className="w-44" />
               <Button type="submit" size="sm" variant="outline">
                 {t("assignRole")}
               </Button>

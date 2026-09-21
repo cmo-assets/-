@@ -84,7 +84,7 @@ export default async function ManagePitchPage({
             <Input id="price_per_hour" name="price_per_hour" type="number" defaultValue={pitch.price_per_hour} />
           </div>
           <div>
-            <Label htmlFor="slot_duration_minutes">Slot (min)</Label>
+            <Label htmlFor="slot_duration_minutes">{t("slotMinutesLabel")}</Label>
             <Input
               id="slot_duration_minutes"
               name="slot_duration_minutes"
@@ -94,11 +94,11 @@ export default async function ManagePitchPage({
             />
           </div>
           <div>
-            <Label htmlFor="capacity_min">Min players</Label>
+            <Label htmlFor="capacity_min">{t("minPlayersLabel")}</Label>
             <Input id="capacity_min" name="capacity_min" type="number" defaultValue={pitch.capacity_min} />
           </div>
           <div>
-            <Label htmlFor="capacity_max">Max players</Label>
+            <Label htmlFor="capacity_max">{t("maxPlayersLabel")}</Label>
             <Input id="capacity_max" name="capacity_max" type="number" defaultValue={pitch.capacity_max} />
           </div>
           <div>
@@ -106,7 +106,7 @@ export default async function ManagePitchPage({
             <Input id="deposit_amount" name="deposit_amount" type="number" defaultValue={pitch.deposit_amount} />
           </div>
           <div>
-            <Label htmlFor="advance_booking_deposit_days">Deposit threshold (days)</Label>
+            <Label htmlFor="advance_booking_deposit_days">{t("depositThresholdLabel")}</Label>
             <Input
               id="advance_booking_deposit_days"
               name="advance_booking_deposit_days"
@@ -124,7 +124,7 @@ export default async function ManagePitchPage({
             {t("depositRequiredLabel")}
           </label>
           <Button type="submit" className="col-span-2">
-            Save
+            {t("save")}
           </Button>
         </form>
       </Card>
@@ -149,7 +149,7 @@ export default async function ManagePitchPage({
             );
           })}
           <Button type="submit" size="sm">
-            Save
+            {t("save")}
           </Button>
         </form>
       </Card>
@@ -158,15 +158,15 @@ export default async function ManagePitchPage({
         <h2 className="font-semibold">{t("addException")}</h2>
         <form action={addException.bind(null, pitchId)} className="flex flex-wrap items-end gap-3">
           <div>
-            <Label htmlFor="date">Date</Label>
+            <Label htmlFor="date">{t("dateLabel")}</Label>
             <Input id="date" name="date" type="date" required />
           </div>
           <div className="flex-1">
-            <Label htmlFor="reason">Reason</Label>
-            <Input id="reason" name="reason" placeholder="Maintenance..." />
+            <Label htmlFor="reason">{t("reasonLabel")}</Label>
+            <Input id="reason" name="reason" placeholder={t("reasonPlaceholder")} />
           </div>
           <Button type="submit" size="sm">
-            Save
+            {t("save")}
           </Button>
         </form>
 
@@ -186,7 +186,7 @@ export default async function ManagePitchPage({
                   )}
                   <form action={deleteException.bind(null, pitchId, exception.id)}>
                     <Button type="submit" variant="ghost" size="sm">
-                      Remove
+                      {t("removeButton")}
                     </Button>
                   </form>
                 </div>
@@ -201,12 +201,12 @@ export default async function ManagePitchPage({
         <form className="flex items-center gap-2">
           <Input type="date" name="date" defaultValue={selectedDate} />
           <Button type="submit" size="sm" variant="outline">
-            Go
+            {t("goButton")}
           </Button>
         </form>
 
         {dayBookings.length === 0 ? (
-          <p className="text-sm text-muted-foreground">—</p>
+          <p className="text-sm text-muted-foreground">{t("noBookingsOnDay")}</p>
         ) : (
           <ul className="space-y-2">
             {dayBookings.map((booking) => (
@@ -215,7 +215,9 @@ export default async function ManagePitchPage({
                 className="flex items-center justify-between rounded-xl border border-border p-2.5 text-sm"
               >
                 <span>{formatRiyadhTime(booking.starts_at, appLocale)}</span>
-                <span>{booking.player_count} players</span>
+                <span>
+                  {booking.player_count} {t("playersSuffix")}
+                </span>
                 <span className="font-medium">{formatSar(appLocale, booking.total_price)}</span>
               </li>
             ))}

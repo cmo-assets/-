@@ -38,15 +38,19 @@ export default async function AdminVenuePage({
       <h1 className="text-2xl font-bold">{localized(appLocale, venue!.name_ar, venue!.name_en)}</h1>
 
       <div className="space-y-2">
-        {(pitches ?? []).map((pitch) => (
-          <Card key={pitch.id} className="flex items-center justify-between p-3">
-            <span className="font-medium">{localized(appLocale, pitch.name_ar, pitch.name_en)}</span>
-            <div className="flex items-center gap-2">
-              <Badge variant="outline">{pitch.size}</Badge>
-              <Badge variant="outline">{pitch.price_per_hour} ﷼</Badge>
-            </div>
-          </Card>
-        ))}
+        {(pitches ?? []).length === 0 ? (
+          <p className="text-sm text-muted-foreground">{t("noVenuePitches")}</p>
+        ) : (
+          (pitches ?? []).map((pitch) => (
+            <Card key={pitch.id} className="flex items-center justify-between p-3">
+              <span className="font-medium">{localized(appLocale, pitch.name_ar, pitch.name_en)}</span>
+              <div className="flex items-center gap-2">
+                <Badge variant="outline">{pitch.size}</Badge>
+                <Badge variant="outline">{pitch.price_per_hour} ﷼</Badge>
+              </div>
+            </Card>
+          ))
+        )}
       </div>
 
       <Card className="space-y-4 p-5">
@@ -61,13 +65,13 @@ export default async function AdminVenuePage({
           </Select>
           <label className="flex items-center gap-2 text-sm">
             <input type="checkbox" name="is_indoor" className="h-4 w-4 accent-[var(--color-primary-600)]" />
-            Indoor
+            {t("indoorLabel")}
           </label>
-          <Input name="price_per_hour" type="number" placeholder="Price / hour (SAR)" required />
-          <Input name="slot_duration_minutes" type="number" placeholder="Slot minutes (default 60)" />
-          <Input name="capacity_min" type="number" placeholder="Min players" required />
-          <Input name="capacity_max" type="number" placeholder="Max players" required />
-          <Input name="amenities" placeholder="Amenities, comma separated" className="col-span-2" />
+          <Input name="price_per_hour" type="number" placeholder={t("pricePerHourPlaceholder")} required />
+          <Input name="slot_duration_minutes" type="number" placeholder={t("slotMinutesPlaceholder")} />
+          <Input name="capacity_min" type="number" placeholder={t("minPlayersPlaceholder")} required />
+          <Input name="capacity_max" type="number" placeholder={t("maxPlayersPlaceholder")} required />
+          <Input name="amenities" placeholder={t("amenitiesPlaceholder")} className="col-span-2" />
           <div className="col-span-2">
             <label className="mb-1.5 block text-sm font-medium">{t("uploadImages")}</label>
             <input type="file" name="images" accept="image/*" multiple className="text-sm" />

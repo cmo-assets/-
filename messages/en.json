@@ -105,7 +105,19 @@
       "depositAmountLabel": "Deposit amount (SAR)",
       "weeklyHours": "Weekly hours",
       "addException": "Add exception / closure",
-      "conflictWarning": "Warning: this slot is already booked — contact the customer directly before closing it"
+      "conflictWarning": "Warning: this slot is already booked — contact the customer directly before closing it",
+      "save": "Save",
+      "slotMinutesLabel": "Slot duration (minutes)",
+      "minPlayersLabel": "Minimum players",
+      "maxPlayersLabel": "Maximum players",
+      "depositThresholdLabel": "Deposit threshold (days)",
+      "dateLabel": "Date",
+      "reasonLabel": "Reason",
+      "reasonPlaceholder": "Maintenance, repairs...",
+      "goButton": "Go",
+      "removeButton": "Remove",
+      "playersSuffix": "players",
+      "noBookingsOnDay": "No bookings on this day"
     },
     "admin": {
       "title": "Admin dashboard",
@@ -115,7 +127,18 @@
       "people": "Admins & owners",
       "assignRole": "Assign role",
       "roleLabel": "Role",
-      "uploadImages": "Upload images"
+      "uploadImages": "Upload images",
+      "indoorLabel": "Indoor",
+      "pricePerHourPlaceholder": "Price / hour (SAR)",
+      "slotMinutesPlaceholder": "Slot minutes (default 60)",
+      "minPlayersPlaceholder": "Min players",
+      "maxPlayersPlaceholder": "Max players",
+      "amenitiesPlaceholder": "Amenities, comma separated",
+      "venueIdPlaceholder": "Venue ID (owner only)",
+      "rolePlayer": "Player",
+      "roleOwner": "Venue owner",
+      "roleAdmin": "Admin",
+      "noVenuePitches": "No pitches at this venue yet"
     }
   },
   "footer": {

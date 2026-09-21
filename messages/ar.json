@@ -105,7 +105,19 @@
       "depositAmountLabel": "مبلغ العربون (﷼)",
       "weeklyHours": "الأوقات الأسبوعية",
       "addException": "إضافة استثناء / إغلاق",
-      "conflictWarning": "تنبيه: هذه الفترة محجوزة من قبل مستخدم، يرجى التواصل معه مباشرة قبل الإغلاق"
+      "conflictWarning": "تنبيه: هذه الفترة محجوزة من قبل مستخدم، يرجى التواصل معه مباشرة قبل الإغلاق",
+      "save": "حفظ",
+      "slotMinutesLabel": "مدة الفترة (بالدقائق)",
+      "minPlayersLabel": "الحد الأدنى للاعبين",
+      "maxPlayersLabel": "الحد الأقصى للاعبين",
+      "depositThresholdLabel": "عتبة العربون (أيام)",
+      "dateLabel": "التاريخ",
+      "reasonLabel": "السبب",
+      "reasonPlaceholder": "صيانة، إصلاحات...",
+      "goButton": "عرض",
+      "removeButton": "إزالة",
+      "playersSuffix": "لاعبًا",
+      "noBookingsOnDay": "لا توجد حجوزات في هذا اليوم"
     },
     "admin": {
       "title": "لوحة الإدارة",
@@ -115,7 +127,18 @@
       "people": "المشرفون والملاك",
       "assignRole": "إسناد دور",
       "roleLabel": "الدور",
-      "uploadImages": "رفع الصور"
+      "uploadImages": "رفع الصور",
+      "indoorLabel": "مغطى",
+      "pricePerHourPlaceholder": "السعر / الساعة (ريال)",
+      "slotMinutesPlaceholder": "مدة الفترة بالدقائق (افتراضي 60)",
+      "minPlayersPlaceholder": "الحد الأدنى للاعبين",
+      "maxPlayersPlaceholder": "الحد الأقصى للاعبين",
+      "amenitiesPlaceholder": "المرافق، مفصولة بفاصلة",
+      "venueIdPlaceholder": "معرف المنشأة (للمالك فقط)",
+      "rolePlayer": "لاعب",
+      "roleOwner": "مالك ملعب",
+      "roleAdmin": "مشرف",
+      "noVenuePitches": "لا توجد ملاعب في هذه المنشأة بعد"
     }
   },
   "footer": {
